@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <!-- Formulario para capturar un pago de un usuario: utilizando el email, el monto y el metodo de pago: transferencia, paypal o tarjeta de credito -->
+    <form action="/payment-process" method="POST" class="payment-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="amount">Monto:</label>
+        <input type="number" id="amount" name="amount" required>
+
+        <label for="paymentMethod">Método de Pago:</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+            <option value="bankTransfer">Transferencia</option>
+            <option value="paypal">PayPal</option>
+            <option value="creditCard">Tarjeta de Crédito</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Pagar</button>
+    </form>
+    <!--Import del js `js/parmentForm.js`-->
+    <script src="/js/paymentForm.js"></script>
+</body>
+
+</html>
