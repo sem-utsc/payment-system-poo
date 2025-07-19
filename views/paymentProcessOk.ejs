@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
 <body>
-    <h1>Payment Processed Successfully</h1>
-    <p>Thank you for your payment!</p>
-    <p>Email: <%= email %></p>
-    <p>Amount: <%= amount %></p>
-    <p>Payment Method: <%= paymentMethod %></p>
-    <p>Message: <%= msg %></p>
-    <a href="/payment-form">Go back to payment form</a>
+    <section class="success-page">
+        <h1 class="title">Payment Processed Successfully</h1>
+        <p>Thank you for your payment!</p>
+        <p>Email: <%= email %></p>
+        <p>Amount: <%= amount %></p>
+        <p>Payment Method: <%= paymentMethod %></p>
+        <p>Message: <b><%= msg %></b></p>
+        <a class="btn" href="/payment-form">Go back to payment form</a>
+    </section>
 </body>
 </html>

@@ -27,6 +27,7 @@ router.get("/my-page", function (req, res, next) {
 });
 
 router.get("/payment-form", function (req, res, next) {
+  // res.render("paymentProcessOk", { email:"email@email.com", amount:100, paymentMethod: "paypal", msg: "Payment processed successfully." });
   res.render("paymentForm", {});
 })
 
@@ -59,6 +60,7 @@ router.get("/payment-history", function (req, res, next) {
   // get the payments from the repository
   const payments = PaymentArrayRepo.getPayments();
   // render the payment history view with the payments
-  res.json({ payments: payments });
+  console.log(payments);
+  res.render("paymentHistory", { payments });
 });
 module.exports = router;

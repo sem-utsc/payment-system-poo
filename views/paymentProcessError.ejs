@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
 <body>
-    <h1>Error Processing Payment</h1>
-    <p>There was an error processing your payment.</p>
-    <p>Error Message: <%= errorMessage %></p>
-    <p>Please try again or contact support if the issue persists.</p>
-    <a href="/payment-form">Go back to payment form</a>
+    <section class="error-page">
+        <h1 class="title">Error Processing Payment</h1>
+        <p>
+            There was an error processing your payment. <br>
+            Error Message: <br>
+            <b>"<%= errorMessage %>"</b> <br>
+            Please try again or contact support if the issue persists.
+        </p>
+        <a class="btn btn-error" href="/payment-form">Go back to payment form</a>
+    </section>
 </body>
 </html>

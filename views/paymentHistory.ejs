@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <section>
+        <h1 class="title">Payment History</h1>
+        <p>Here you can view your payment history.</p>
+        <table class="payment-history-table">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Amount</th>
+                    <th>Payment Method</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% payments.forEach(payment => { %>
+                    <tr>
+                        <td><%= payment.email %></td>
+                        <td><%= payment.amount %></td>
+                        <td><%= payment.paymentMethod %></td>
+                        <td><span class="<%= payment.status === 'OK' ? 'success' : 'error' %>"><%= payment.status %></span></td>
+                        <td><%= payment.date.toLocaleDateString() %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

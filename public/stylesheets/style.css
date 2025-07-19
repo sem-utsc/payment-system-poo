@@ -21,6 +21,14 @@ input, select {
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  color: #333;
 }
 
 input:focus {
@@ -36,14 +44,6 @@ input:focus {
 .payment-form {
   display: flex;
   flex-direction: column;
-  max-width: 512px;
-  margin: 0 auto;
-  /* Border around the form with a light shadow similar to an elevation*/
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
 }
 
 /* .payment-form > * {
@@ -63,4 +63,89 @@ input:focus {
 
 .btn-primary {
   background-color: #00B7FF;
+}
+.error-page, .success-page, .payment-form, .accepted-methods {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.error-page, .success-page {
+  text-align: center;
+}
+
+.error-page .title, .success-page .title {
+  font-size: 2.5rem;
+  color: #2e2e2e;
+}
+
+.error-page p, .success-page p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.2;
+}
+
+.error-page .btn, .success-page .btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+span.success{
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+span.error{
+  background-color: #ff4d4d;;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn-error {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.payment-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.payment-history-table th, .payment-history-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.payment-history-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+.payment-history-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.payment-history-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.accepted-methods-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.accepted-methods-logos .logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
 }
