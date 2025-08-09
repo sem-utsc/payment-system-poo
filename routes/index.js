@@ -8,8 +8,8 @@ var {
   PaymentService
 } = require("../service/payment.js");
 var {
-  PaymentArrayRepo
-} = require("../repository/payment.js");
+  PaymentSqliteRepo
+} = require("../repository/paymentSqlite.js");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -45,7 +45,7 @@ router.post("/payment-process", function (req, res, next) {
   // create a new instance of PaymentFormReq
   const paymentFormReq = new PaymentFormReq(email, amount, paymentMethod);
   // create a new instance of PaymentService
-  const paymentService = new PaymentService(PaymentArrayRepo);
+  const paymentService = new PaymentService(PaymentSqliteRepo);
   // process the payment
   const paymentServiceRes = paymentService.processPayment(paymentFormReq);
   // if the payment was not successful, return an error response
@@ -58,7 +58,7 @@ router.post("/payment-process", function (req, res, next) {
 // GET payment history
 router.get("/payment-history", function (req, res, next) {
   // get the payments from the repository
-  const payments = PaymentArrayRepo.getPayments();
+  const payments = PaymentSqliteRepo.getPayments();
   // render the payment history view with the payments
   console.log(payments);
   res.render("paymentHistory", { payments });

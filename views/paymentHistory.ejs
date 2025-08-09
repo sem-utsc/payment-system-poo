@@ -27,7 +27,7 @@
                         <td><%= payment.amount %></td>
                         <td><%= payment.paymentMethod %></td>
                         <td><span class="<%= payment.status === 'OK' ? 'success' : 'error' %>"><%= payment.status %></span></td>
-                        <td><%= payment.date.toLocaleDateString() %></td>
+                        <td><%= payment.date.toLocaleString('es-MX') %></td>
                     </tr>
                 <% }) %>
             </tbody>
